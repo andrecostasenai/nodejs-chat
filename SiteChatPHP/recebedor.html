@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt_BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Recebedor de notificações</title>
+</head>
+<body>
+  <script src="http://192.168.2.2:4555/socket.io/socket.io.js"></script>
+  <script>
+    var socket = io('http://192.168.2.2:4555', {transports: ['websocket', 'polling', 'flashsocket']});
+    socket.on('notificacao', function (data) {
+      var x = document.createElement("INPUT");
+      x.setAttribute("type", "text");
+      x.setAttribute("value", data);
+      document.body.appendChild(x);
+      var a = document.createElement("BR");
+      var b = document.createElement("BR");
+      document.body.appendChild(a); 
+      document.body.appendChild(b); 
+    });
+  </script>
+  <div id="messagebox">
+    
+  </div>
+</body>
+</html>
