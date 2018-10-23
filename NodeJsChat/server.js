@@ -23,7 +23,6 @@ var express = require('express')
   app.use('/api', router);
   router.route('/notificar')
     .get(function(req, res){
-    //aqui vamos receber a mensagem
     res.json({message: "testando essa rota"})
     req.app.get('views')
     })
