@@ -7,7 +7,6 @@ var express = require('express')
   app.use(bodyParser.json());
   var port = process.env.PORT || 10000;
   var router = express.Router();
-  /* Socket irá aqui depois */
   var emitir = function(req, res, next) {
   var notificar = req.query.notificacao || '';
   var nomeq = req.query.nome || '';
